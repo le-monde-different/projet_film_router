@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Space</title>
+</head>
+<body>
+    <header>
+        <h2>Admin Space</h2>
+        <hr>
+    </header>
+    <section id="ajouter">
+        <form method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Add new Film :</legend>
+                <label for="name">Name :</label>
+                <input type="text" name="name" id="name" [(ngModel)]="filmName" required>
+<br><br>
+                <fieldset id="radio">
+                    <legend>Select type of movie:</legend>
+
+                    <div>
+                        <input type="radio" id="action" name="genre" value="action" checked />
+                        <label for="action">Action</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="romantique" name="genre" value="romantique" />
+                        <label for="romantique">Romantique</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="scienceFiction" name="genre" value="science fiction" />
+                        <label for="scienceFiction">Science Fiction</label>
+                    </div>
+                </fieldset>
+<br><br>
+                <!-- Add a file input for the photo -->
+                <label for="photo">Add Photo:</label>
+                <input type="file" name="photo" id="photo" accept="image/*">
+
+         
+            </fieldset><br>
+                   <!-- Use type="submit" for a regular submit button -->
+                   <input type="submit" (click)="ajouterFilm()" value="Add-Film" />
+                
+        </form>
+    </section>
+</body>
+</html>
